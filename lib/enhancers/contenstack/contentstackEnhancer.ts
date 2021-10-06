@@ -1,7 +1,7 @@
 import {
     createContentstackEnhancer,
     AddContentstackQueryOptions,
-  } from '@uniformdev/upm-contentstack';
+  } from '@uniformdev/canvas-contentstack';
   import contentstack from 'contentstack';
   import getConfig from 'next/config';
   
