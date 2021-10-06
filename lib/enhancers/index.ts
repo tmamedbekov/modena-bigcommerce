@@ -1,23 +1,23 @@
-import { compose, EnhancerBuilder } from '@uniformdev/upm';
+import { compose, EnhancerBuilder } from '@uniformdev/canvas';
 import getConfig from 'next/config';
 
-import { UPM_CONTENTFUL_PARAMETER_TYPES } from '@uniformdev/upm-contentful';
+import { CANVAS_CONTENTFUL_PARAMETER_TYPES } from '@uniformdev/canvas-contentful';
 import { contentfulEnhancer } from './contentful/contentfulEnhancer';
 import { contentfulModelConverter } from './contentful/contentfulModelConverter';
 
 import { bigCommerceEnhancer } from './bigcommerce/bigCommerceEnhancer';
-import { UPM_BIGCOMMERCE_PARAMETER_TYPES } from '@uniformdev/upm-bigcommerce';
+import { CANVAS_BIGCOMMERCE_PARAMETER_TYPES } from '@uniformdev/canvas-bigcommerce';
 
-import { UPM_CONTENTSTACK_PARAMETER_TYPES } from '@uniformdev/upm-contentstack';
+import { CANVAS_CONTENTSTACK_PARAMETER_TYPES } from '@uniformdev/canvas-contentstack';
 import { contentstackEnhancer } from './contentstack/contentstackEnhancer';
 import { contentstackModelConverter } from './contentstack/contentstackModelConverter';
 
 import { sanityEnhancer } from './sanity/sanityEnhancer';
-import { UPM_SANITY_PARAMETER_TYPES } from '@uniformdev/upm-sanity';
+import { CANVAS_SANITY_PARAMETER_TYPES } from '@uniformdev/canvas-sanity';
 import { sanityModelConverter } from './sanity/sanityModelConverter';
 
 import { commercetoolsEnhancer } from './commercetools/commerceToolsEnhancer';
-import { UPM_COMMERCETOOLS_PARAMETER_TYPES } from '@uniformdev/upm-commercetools';
+import { CANVAS_COMMERCETOOLS_PARAMETER_TYPES } from '@uniformdev/canvas-commercetools';
 import { commercetoolsModelConverter } from './commercetools/commercetoolsModelConverter';
 import { bigCommerceModelConverter } from './bigcommerce/bigCommerceModelConverter';
 
@@ -91,31 +91,31 @@ console.warn(
 
 export const enhancers = new EnhancerBuilder()
   .parameterType(
-    UPM_SANITY_PARAMETER_TYPES,
+    CANVAS_SANITY_PARAMETER_TYPES,
     sanityConfigured
       ? compose(sanityEnhancer(), sanityModelConverter)
       : undefined
   )
   .parameterType(
-    UPM_CONTENTFUL_PARAMETER_TYPES,
+    CANVAS_CONTENTFUL_PARAMETER_TYPES,
     contentfulConfigured
       ? compose(contentfulEnhancer(), contentfulModelConverter)
       : undefined
   )
   .parameterType(
-    UPM_CONTENTSTACK_PARAMETER_TYPES,
+    CANVAS_CONTENTSTACK_PARAMETER_TYPES,
     contentstackConfigured
       ? compose(contentstackEnhancer(), contentstackModelConverter)
       : undefined
   )
   .parameterType(
-    UPM_BIGCOMMERCE_PARAMETER_TYPES,
+    CANVAS_BIGCOMMERCE_PARAMETER_TYPES,
     bigCommerceConfigured
       ? compose(bigCommerceEnhancer(), bigCommerceModelConverter)
       : undefined
   )
   .parameterType(
-    UPM_COMMERCETOOLS_PARAMETER_TYPES,
+    CANVAS_COMMERCETOOLS_PARAMETER_TYPES,
     commerceToolsConfigured
       ? compose(commercetoolsEnhancer(), commercetoolsModelConverter)
       : undefined
